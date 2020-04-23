@@ -14,6 +14,8 @@ By using a combination of email template and the "Messaging" class we can genera
 There is a test flow and test class included to help understand the usage.
 
 
+## Deploy to Org
+
 <a href="https://githubsfdeploy.herokuapp.com?owner=&repo=">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
