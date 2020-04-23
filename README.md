@@ -22,6 +22,11 @@ There is a test flow and test class included to help understand the usage.
 </a>
 
 
+## Screenshots
+1) Debug flow (Test_Flow_for_case_thread_id) by passing parameters :
+<img alt="Debug flow"
+       src="https://github.com/rahulkotian/CaseThreadId/issues/1">
+
 	
 	
 
