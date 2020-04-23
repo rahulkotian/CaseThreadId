@@ -16,7 +16,9 @@ There is a test flow and test class included to help understand the usage.
 
 ## Deploy to Org
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=&repo=">
+Do you want to try in your own org ?
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=rahulkotian&repo=CaseThreadId">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
