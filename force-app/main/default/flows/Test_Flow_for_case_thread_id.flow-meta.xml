@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Get case thread id by passing case id</description>
+        <name>Get_case_thread_id</name>
+        <label>Get case thread id</label>
+        <locationX>256</locationX>
+        <locationY>74</locationY>
+        <actionName>EmailUtilityClass</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_email</targetReference>
+        </connector>
+        <inputParameters>
+            <name>caseId</name>
+            <value>
+                <elementReference>caseId</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>caseThreadId</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_email</name>
+        <label>Send email</label>
+        <locationX>479</locationX>
+        <locationY>79</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>Here&#39;s the case thread id : {!caseThreadId}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Receiveremailaddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Test</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <description>Use this flow to understand how to call the apex class in a flow.</description>
+    <interviewLabel>Test Flow for case thread id {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test Flow for case thread id</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_case_thread_id</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Input case id</description>
+        <name>caseId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Output case thread id</description>
+        <name>caseThreadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Receiver of test email</description>
+        <name>Receiveremailaddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
