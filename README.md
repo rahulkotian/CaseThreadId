@@ -3,7 +3,7 @@ There are scenarios when you need a case thread id , either in your flow or in A
 Open idea: https://success.salesforce.com/ideaView?id=08730000000XvdHAAS
 
 ## Components
-		1) Email Template:  Case_Thread_Id_Email_Template
+	  1) Email Template:  Case_Thread_Id_Email_Template
 	  2) Apex class: EmailUtilityClass, EmailUtilityClassTest
 	  3) Flow: Test_Flow_for_case_thread_id
 
