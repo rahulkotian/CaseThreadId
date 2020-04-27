@@ -2,8 +2,7 @@ global class EmailUtilityClass {
 	private static String getTextBody(String templateId, String WhatId , String WhoId)
     {
         String body ='';
-        Messaging.SingleEmailMessage email = 
-            Messaging.renderStoredEmailTemplate(templateId,WhoId, WhatId);
+        Messaging.SingleEmailMessage email = Messaging.renderStoredEmailTemplate(templateId,WhoId, WhatId);
         body= email.getPlainTextBody() ;
         return body;
         
@@ -16,12 +15,11 @@ global class EmailUtilityClass {
         try{
              if( caseTemplate != null && caseTemplate.size() > 0 )
              {
-                  CaseTemplate csTemplate = caseTemplate[0];
-                 
-                 EmailTemplate emt = [select id from EmailTemplate where developername = 'Case_Thread_Id_Email_Template'];
+                CaseTemplate csTemplate = caseTemplate[0];
+                EmailTemplate emt = [select id from EmailTemplate where developername = 'Case_Thread_Id_Email_Template'];
                 Case tempCase = [select id , contactid from case where id =:csTemplate.caseId  limit 1] ;
                 String caseThrd = getTextBody(emt.id, tempCase.contactid , csTemplate.caseId );
-                 caseThreadId.add(caseThrd);
+                caseThreadId.add(caseThrd);
              }
         }catch(Exception ex){
             System.debug('Exception : '+ex.getMessage());
